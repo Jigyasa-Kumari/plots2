@@ -18,8 +18,8 @@ class CommentMailer < ActionMailer::Base
     @user = user
     @comment = comment
     @footer = feature('email-footer')
-    mail(to: user.email, subject: "New comment on #{comment.node.title}" \
-                                  " (##{comment.node.id}) - #c#{comment.id}")
+    mail(to: user.email, subject: "New comment on #{comment.parent.title}" \
+                                  " (##{comment.parent.id}) - #c#{comment.id} ")
   end
 
   # user is awarder, not awardee
